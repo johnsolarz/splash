@@ -1,6 +1,6 @@
 # [Splash](http://eightsevencentral.com/)
 
-Built by Eight Seven Central in Des Moines, Iowa. This work is protected. You can't use it. © Eight Seven Central.
+Built by Eight Seven Central in Des Moines, Iowa. This work is protected. © Eight Seven Central.
 
 ## Installation
 
@@ -11,7 +11,7 @@ git clone git@github.com/johsolarz/splash.git
 ```
 and rename the directory to the name of your theme or website.
 
-3. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies contained in `package.json` by running the following from the Roots theme directory:
+3. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies contained in `package.json` by running the following from the theme directory:
 ```
 npm install
 ```
