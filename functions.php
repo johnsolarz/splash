@@ -24,7 +24,7 @@ require_once locate_template('/lib/custom.php');          // Custom functions
  */
 include_once('assets/plugins/esc-dashboard/dashboard.php' );
 
-// define( 'ACF_LITE' , true );
+define( 'ACF_LITE' , true );
 include_once('assets/plugins/advanced-custom-fields/acf.php' );
 require_once locate_template('/lib/custom-fields.php');   // Load ACF field groups after acf.php
 include_once('assets/plugins/acf-repeater/acf-repeater.php');
