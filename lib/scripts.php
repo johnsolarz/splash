@@ -11,7 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function splash_scripts() {
-  wp_enqueue_style('splash_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '1f17ac27e41004a58bbae5137ca3a19d');
+  wp_enqueue_style('splash_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '6966fb2a7b3f7994cc3e2dfbb3dea3c7');
 
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:

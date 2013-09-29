@@ -9,13 +9,13 @@ Built by Eight Seven Central in Des Moines, Iowa. This work is protected. © Eig
 ```
 git clone git@github.com/johsolarz/splash.git
 ```
-and rename the directory to the name of your theme or website.
+and rename the directory to the name of your theme.
 
 3. [Install Grunt](http://gruntjs.com/getting-started), and then install the dependencies contained in `package.json` by running the following from the theme directory:
 ```
 npm install
 ```
-4. Surfs up
+4. Surf's up
 
 ## Author
 

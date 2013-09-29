@@ -22,10 +22,9 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 /**
  * Splash plugins
  */
-include_once('assets/plugins/esc-dashboard/dashboard.php' );
-
 define( 'ACF_LITE' , true );
+include_once('assets/plugins/esc-dashboard/dashboard.php' );
 include_once('assets/plugins/advanced-custom-fields/acf.php' );
-require_once locate_template('/lib/custom-fields.php');   // Load ACF field groups after acf.php
 include_once('assets/plugins/acf-repeater/acf-repeater.php');
 include_once('assets/plugins/acf-options-page/acf-options-page.php' );
+require_once locate_template('/lib/custom-fields.php');
