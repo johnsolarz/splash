@@ -204,7 +204,7 @@ if(function_exists("register_field_group"))
         'name' => 'font_embed_code',
         'type' => 'textarea',
         'default_value' => '',
-        'placeholder' => '<script type="text/javascript" src="//use.typekit.net/mjg5zpl.js"></script> and <script type="text/javascript">try{Typekit.load();}catch(e){}</script>',
+        'placeholder' => '<script type="text/javascript" src="//use.typekit.net/mjg5zpl.js"></script>',
         'maxlength' => '',
         'formatting' => 'html',
       ),
