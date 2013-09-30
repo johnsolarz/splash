@@ -21,8 +21,7 @@ module.exports = function(grunt) {
         },
         files: {
           'assets/css/main.min.css': [
-            'assets/less/app.less',
-            'assets/plugins/royalslider/royalslider.less' // Add royalslider base style, theme style is loaded in <head>
+            'assets/less/app.less'
           ]
         }
       }
@@ -62,8 +61,7 @@ module.exports = function(grunt) {
       less: {
         files: [
           'assets/less/*.less',
-          'assets/less/bootstrap/*.less',
-          'assets/plugins/royalslider/royalslider.less'
+          'assets/less/bootstrap/*.less'
         ],
         tasks: ['recess', 'version']
       },

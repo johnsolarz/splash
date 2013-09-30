@@ -1,6 +1,6 @@
 <?php if(get_field('slide', 'option')): ?>
 
-<?php $css = get_field('slider_theme', 'option'); ?>
+<?php $css = get_field('theme', 'option'); ?>
 
   <div class="royalSlider
   <?php if ($css == 'default') {

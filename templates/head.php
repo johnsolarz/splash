@@ -26,14 +26,17 @@
 
   <?php wp_head(); ?>
 
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/plugins/royalslider/jquery.royalslider.min.js"></script>
-  <script type="text/javascript" src="//use.typekit.net/mjg5zpl.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <?php
+  $embed = get_field('font_embed_code', 'option');
+  if($embed) {
+    echo $embed;
+  } ?>
 
   <?php
-  $skin = get_field('slider_theme', 'option');
+  $theme = get_field('theme', 'option');
+  echo '<link rel="stylesheet" href="' . get_template_directory_uri() . '/assets/plugins/royalslider/skins/' . $theme . '/rs-' . $theme . '.css">';
   ?>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/plugins/royalslider/skins/<?php echo $skin; ?>/rs-<?php echo $skin; ?>.css">
+
   <?php
   $css = get_field('logo', 'option');
   if ($css) {

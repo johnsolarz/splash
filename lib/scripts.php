@@ -11,7 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function splash_scripts() {
-  wp_enqueue_style('splash_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '6966fb2a7b3f7994cc3e2dfbb3dea3c7');
+  wp_enqueue_style('splash_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'a1a7f8e20bdf266033f0445d8a20338f');
 
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
@@ -28,7 +28,7 @@ function splash_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.6.2.min.js', false, null, false);
-  wp_register_script('splash_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, '5a46e47c61a6f673461bdb654866b962', true);
+  wp_register_script('splash_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, '2c089521895e75e3323a83127f75728e', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('splash_scripts');

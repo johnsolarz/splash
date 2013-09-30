@@ -7,7 +7,7 @@ Built by Eight Seven Central in Des Moines, Iowa. This work is protected. © Eig
 1. Navigate to local project directory
 2. [Download](https://github.com/johnsolarz/splash/zipball/master) or:
 ```
-git clone git@github.com/johsolarz/splash.git
+git clone git@github.com/johnsolarz/splash.git
 ```
 and rename the directory to the name of your theme.
 

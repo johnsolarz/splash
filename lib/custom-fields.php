@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  Install Add-ons
  *
@@ -32,50 +31,47 @@
 if(function_exists("register_field_group"))
 {
   register_field_group(array (
-    'id' => 'acf_splash-page',
-    'title' => 'Splash Page',
+    'id' => 'acf_header',
+    'title' => 'Header',
     'fields' => array (
       array (
-        'key' => 'field_5246fd6e74a4e',
+        'key' => 'field_52497ec189eb5',
         'label' => 'Logo',
         'name' => 'logo',
         'type' => 'image',
         'save_format' => 'object',
-        'preview_size' => 'large',
+        'preview_size' => 'thumbnail',
         'library' => 'all',
       ),
       array (
-        'key' => 'field_5240527aa17f7',
+        'key' => 'field_524976dafffff',
         'label' => 'Facebook',
         'name' => 'facebook',
         'type' => 'text',
-        'instructions' => 'Add your facebook handle',
         'default_value' => '',
-        'placeholder' => 'https://www.facebook.com/',
+        'placeholder' => 'http://www.facebook.com/',
         'prepend' => '',
         'append' => '',
         'formatting' => 'html',
         'maxlength' => '',
       ),
       array (
-        'key' => 'field_524052c4a17f9',
+        'key' => 'field_5249770600000',
         'label' => 'Google Plus',
         'name' => 'google_plus',
         'type' => 'text',
-        'instructions' => 'Add your google+ handle',
         'default_value' => '',
-        'placeholder' => 'https://plus.google.com/',
+        'placeholder' => 'http://plus.google.com/',
         'prepend' => '',
         'append' => '',
         'formatting' => 'html',
         'maxlength' => '',
       ),
       array (
-        'key' => 'field_524052a7a17f8',
+        'key' => 'field_5249771f00001',
         'label' => 'Instagram',
         'name' => 'instagram',
         'type' => 'text',
-        'instructions' => 'Add your instagram handle',
         'default_value' => '',
         'placeholder' => 'http://instagram.com/',
         'prepend' => '',
@@ -84,11 +80,10 @@ if(function_exists("register_field_group"))
         'maxlength' => '',
       ),
       array (
-        'key' => 'field_524052dda17fa',
+        'key' => 'field_5249773200002',
         'label' => 'Pinterest',
         'name' => 'pinterest',
         'type' => 'text',
-        'instructions' => 'Add your pinterest handle',
         'default_value' => '',
         'placeholder' => 'http://www.pinterest.com/',
         'prepend' => '',
@@ -97,36 +92,59 @@ if(function_exists("register_field_group"))
         'maxlength' => '',
       ),
       array (
-        'key' => 'field_524052f5a17fb',
+        'key' => 'field_5249774d00003',
         'label' => 'Twitter',
         'name' => 'twitter',
         'type' => 'text',
-        'instructions' => 'Add your twitter handle',
         'default_value' => '',
-        'placeholder' => 'https://twitter.com/',
+        'placeholder' => 'http://twitter.com/',
         'prepend' => '',
         'append' => '',
         'formatting' => 'html',
         'maxlength' => '',
       ),
+    ),
+    'location' => array (
       array (
-        'key' => 'field_523ca8e5e1a4d',
+        array (
+          'param' => 'options_page',
+          'operator' => '==',
+          'value' => 'acf-options-header',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_slides',
+    'title' => 'Slides',
+    'fields' => array (
+      array (
+        'key' => 'field_524977dfead04',
         'label' => 'Slide',
         'name' => 'slide',
         'type' => 'repeater',
         'sub_fields' => array (
           array (
-            'key' => 'field_523ca8ede1a4e',
+            'key' => 'field_524977ecead05',
             'label' => 'Image',
             'name' => 'image',
             'type' => 'image',
             'column_width' => '',
             'save_format' => 'object',
-            'preview_size' => 'large',
+            'preview_size' => 'thumbnail',
             'library' => 'all',
           ),
           array (
-            'key' => 'field_5246fc68d6caa',
+            'key' => 'field_5249781aead06',
             'label' => 'Caption',
             'name' => 'caption',
             'type' => 'wysiwyg',
@@ -142,9 +160,9 @@ if(function_exists("register_field_group"))
         'button_label' => 'Add Slide',
       ),
       array (
-        'key' => 'field_52470de447da8',
-        'label' => 'Slider Theme',
-        'name' => 'slider_theme',
+        'key' => 'field_52497d0dcaf42',
+        'label' => 'Theme',
+        'name' => 'theme',
         'type' => 'select',
         'choices' => array (
           'default' => 'Default',
@@ -162,7 +180,41 @@ if(function_exists("register_field_group"))
         array (
           'param' => 'options_page',
           'operator' => '==',
-          'value' => 'acf-options',
+          'value' => 'acf-options-slides',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+  register_field_group(array (
+    'id' => 'acf_typography',
+    'title' => 'Typography',
+    'fields' => array (
+      array (
+        'key' => 'field_5249749772c85',
+        'label' => 'Font Embed Code',
+        'name' => 'font_embed_code',
+        'type' => 'textarea',
+        'default_value' => '',
+        'placeholder' => '<script type="text/javascript" src="//use.typekit.net/mjg5zpl.js"></script> and <script type="text/javascript">try{Typekit.load();}catch(e){}</script>',
+        'maxlength' => '',
+        'formatting' => 'html',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'options_page',
+          'operator' => '==',
+          'value' => 'acf-options-typography',
           'order_no' => 0,
           'group_no' => 0,
         ),
