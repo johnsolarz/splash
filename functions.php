@@ -1,6 +1,6 @@
 <?php
 /**
- * Splash includes
+ * Roots includes
  */
 require_once locate_template('/lib/utils.php');           // Utility functions
 require_once locate_template('/lib/init.php');            // Initial theme setup and constants
@@ -19,9 +19,6 @@ require_once locate_template('/lib/widgets.php');         // Sidebars and widget
 require_once locate_template('/lib/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          // Custom functions
 
-/**
- * Splash plugins
- */
 define( 'ACF_LITE' , true );
 include_once('assets/plugins/esc-dashboard/dashboard.php' );
 include_once('assets/plugins/advanced-custom-fields/acf.php' );
@@ -29,9 +26,6 @@ include_once('assets/plugins/acf-repeater/acf-repeater.php');
 include_once('assets/plugins/acf-options-page/acf-options-page.php' );
 require_once locate_template('/lib/custom-fields.php');
 
-/**
- * Splash option pages
- */
 acf_add_options_sub_page('Header');
 acf_add_options_sub_page('Slides');
 acf_add_options_sub_page('Typography');

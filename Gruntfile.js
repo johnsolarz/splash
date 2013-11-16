@@ -52,9 +52,9 @@ module.exports = function(grunt) {
       options: {
         file: 'lib/scripts.php',
         css: 'assets/css/main.min.css',
-        cssHandle: 'splash_main',
+        cssHandle: 'roots_main',
         js: 'assets/js/scripts.min.js',
-        jsHandle: 'splash_scripts'
+        jsHandle: 'roots_scripts'
       }
     },
     watch: {

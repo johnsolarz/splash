@@ -12,19 +12,19 @@
  *
  * If you aren't using Apache, alternate configuration settings can be found in the docs.
  *
- * @link https://github.com/retlehs/splash/blob/master/doc/rewrites.md
+ * @link https://github.com/retlehs/roots/blob/master/doc/rewrites.md
  */
-function splash_add_rewrites($content) {
+function roots_add_rewrites($content) {
   global $wp_rewrite;
-  $splash_new_non_wp_rules = array(
+  $roots_new_non_wp_rules = array(
     'assets/(.*)'          => THEME_PATH . '/assets/$1',
     'plugins/(.*)'         => RELATIVE_PLUGIN_PATH . '/$1'
   );
-  $wp_rewrite->non_wp_rules = array_merge($wp_rewrite->non_wp_rules, $splash_new_non_wp_rules);
+  $wp_rewrite->non_wp_rules = array_merge($wp_rewrite->non_wp_rules, $roots_new_non_wp_rules);
   return $content;
 }
 
-function splash_clean_urls($content) {
+function roots_clean_urls($content) {
   if (strpos($content, RELATIVE_PLUGIN_PATH) > 0) {
     return str_replace('/' . RELATIVE_PLUGIN_PATH,  '/plugins', $content);
   } else {
@@ -34,7 +34,7 @@ function splash_clean_urls($content) {
 
 if (!is_multisite() && !is_child_theme()) {
   if (current_theme_supports('rewrites')) {
-    add_action('generate_rewrite_rules', 'splash_add_rewrites');
+    add_action('generate_rewrite_rules', 'roots_add_rewrites');
   }
 
   if (!is_admin() && current_theme_supports('rewrites')) {
@@ -47,6 +47,6 @@ if (!is_multisite() && !is_child_theme()) {
       'style_loader_src'
     );
 
-    add_filters($tags, 'splash_clean_urls');
+    add_filters($tags, 'roots_clean_urls');
   }
 }

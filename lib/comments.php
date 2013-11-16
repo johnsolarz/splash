@@ -4,7 +4,7 @@
  *
  * @link http://twitter.github.com/bootstrap/components.html#media
  */
-class splash_Walker_Comment extends Walker_Comment {
+class Roots_Walker_Comment extends Walker_Comment {
   function start_lvl(&$output, $depth = 0, $args = array()) {
     $GLOBALS['comment_depth'] = $depth + 1; ?>
     <ul <?php comment_class('media unstyled comment-' . get_comment_ID()); ?>>
@@ -42,8 +42,8 @@ class splash_Walker_Comment extends Walker_Comment {
   }
 }
 
-function splash_get_avatar($avatar) {
+function roots_get_avatar($avatar) {
   $avatar = str_replace("class='avatar", "class='avatar pull-left media-object", $avatar);
   return $avatar;
 }
-add_filter('get_avatar', 'splash_get_avatar');
+add_filter('get_avatar', 'roots_get_avatar');

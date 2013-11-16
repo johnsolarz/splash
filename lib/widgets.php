@@ -2,10 +2,10 @@
 /**
  * Register sidebars and widgets
  */
-function splash_widgets_init() {
+function roots_widgets_init() {
   // Sidebars
   register_sidebar(array(
-    'name'          => __('Primary', 'splash'),
+    'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
@@ -14,7 +14,7 @@ function splash_widgets_init() {
   ));
 
   register_sidebar(array(
-    'name'          => __('Footer', 'splash'),
+    'name'          => __('Footer', 'roots'),
     'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s"><div class="widget-inner">',
     'after_widget'  => '</div></section>',
@@ -23,14 +23,14 @@ function splash_widgets_init() {
   ));
 
   // Widgets
-  register_widget('splash_Vcard_Widget');
+  register_widget('Roots_Vcard_Widget');
 }
-add_action('widgets_init', 'splash_widgets_init');
+add_action('widgets_init', 'roots_widgets_init');
 
 /**
  * Example vCard widget
  */
-class splash_Vcard_Widget extends WP_Widget {
+class Roots_Vcard_Widget extends WP_Widget {
   private $fields = array(
     'title'          => 'Title (optional)',
     'street_address' => 'Street Address',
@@ -42,10 +42,10 @@ class splash_Vcard_Widget extends WP_Widget {
   );
 
   function __construct() {
-    $widget_ops = array('classname' => 'widget_splash_vcard', 'description' => __('Use this widget to add a vCard', 'splash'));
+    $widget_ops = array('classname' => 'widget_roots_vcard', 'description' => __('Use this widget to add a vCard', 'roots'));
 
-    $this->WP_Widget('widget_splash_vcard', __('splash: vCard', 'splash'), $widget_ops);
-    $this->alt_option_name = 'widget_splash_vcard';
+    $this->WP_Widget('widget_roots_vcard', __('roots: vCard', 'roots'), $widget_ops);
+    $this->alt_option_name = 'widget_roots_vcard';
 
     add_action('save_post', array(&$this, 'flush_widget_cache'));
     add_action('deleted_post', array(&$this, 'flush_widget_cache'));
@@ -53,7 +53,7 @@ class splash_Vcard_Widget extends WP_Widget {
   }
 
   function widget($args, $instance) {
-    $cache = wp_cache_get('widget_splash_vcard', 'widget');
+    $cache = wp_cache_get('widget_roots_vcard', 'widget');
 
     if (!is_array($cache)) {
       $cache = array();
@@ -71,7 +71,7 @@ class splash_Vcard_Widget extends WP_Widget {
     ob_start();
     extract($args, EXTR_SKIP);
 
-    $title = apply_filters('widget_title', empty($instance['title']) ? __('vCard', 'splash') : $instance['title'], $instance, $this->id_base);
+    $title = apply_filters('widget_title', empty($instance['title']) ? __('vCard', 'roots') : $instance['title'], $instance, $this->id_base);
 
     foreach($this->fields as $name => $label) {
       if (!isset($instance[$name])) { $instance[$name] = ''; }
@@ -98,7 +98,7 @@ class splash_Vcard_Widget extends WP_Widget {
     echo $after_widget;
 
     $cache[$args['widget_id']] = ob_get_flush();
-    wp_cache_set('widget_splash_vcard', $cache, 'widget');
+    wp_cache_set('widget_roots_vcard', $cache, 'widget');
   }
 
   function update($new_instance, $old_instance) {
@@ -108,15 +108,15 @@ class splash_Vcard_Widget extends WP_Widget {
 
     $alloptions = wp_cache_get('alloptions', 'options');
 
-    if (isset($alloptions['widget_splash_vcard'])) {
-      delete_option('widget_splash_vcard');
+    if (isset($alloptions['widget_roots_vcard'])) {
+      delete_option('widget_roots_vcard');
     }
 
     return $instance;
   }
 
   function flush_widget_cache() {
-    wp_cache_delete('widget_splash_vcard', 'widget');
+    wp_cache_delete('widget_roots_vcard', 'widget');
   }
 
   function form($instance) {
@@ -124,7 +124,7 @@ class splash_Vcard_Widget extends WP_Widget {
       ${$name} = isset($instance[$name]) ? esc_attr($instance[$name]) : '';
     ?>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id($name)); ?>"><?php _e("{$label}:", 'splash'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id($name)); ?>"><?php _e("{$label}:", 'roots'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id($name)); ?>" name="<?php echo esc_attr($this->get_field_name($name)); ?>" type="text" value="<?php echo ${$name}; ?>">
     </p>
     <?php

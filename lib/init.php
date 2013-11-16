@@ -1,14 +1,14 @@
 <?php
 /**
- * splash initial setup and constants
+ * Roots initial setup and constants
  */
-function splash_setup() {
+function roots_setup() {
   // Make theme available for translation
-  load_theme_textdomain('splash', get_template_directory() . '/lang');
+  load_theme_textdomain('roots', get_template_directory() . '/lang');
 
   // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
   register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'splash'),
+    'primary_navigation' => __('Primary Navigation', 'roots'),
   ));
 
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
@@ -22,7 +22,7 @@ function splash_setup() {
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style('/assets/css/editor-style.css');
 }
-add_action('after_setup_theme', 'splash_setup');
+add_action('after_setup_theme', 'roots_setup');
 
 // Backwards compatibility for older than PHP 5.3.0
 if (!defined('__DIR__')) { define('__DIR__', dirname(__FILE__)); }

@@ -1,5 +1,5 @@
 <?php
-// Splash social options
+// Social icons and links
 $facebook  = get_field('facebook', 'option');
 $google    = get_field('google_plus', 'option');
 $instagram = get_field('instagram', 'option');

@@ -4,15 +4,15 @@
  *
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
-function splash_template_path() {
-  return splash_Wrapping::$main_template;
+function roots_template_path() {
+  return Roots_Wrapping::$main_template;
 }
 
-function splash_sidebar_path() {
-  return new splash_Wrapping('templates/sidebar.php');
+function roots_sidebar_path() {
+  return new Roots_Wrapping('templates/sidebar.php');
 }
 
-class splash_Wrapping {
+class Roots_Wrapping {
   // Stores the full path to the main template file
   static $main_template;
 
@@ -30,7 +30,7 @@ class splash_Wrapping {
   }
 
   public function __toString() {
-    $this->templates = apply_filters('splash_wrap_' . $this->slug, $this->templates);
+    $this->templates = apply_filters('roots_wrap_' . $this->slug, $this->templates);
     return locate_template($this->templates);
   }
 
@@ -42,7 +42,7 @@ class splash_Wrapping {
       self::$base = false;
     }
 
-    return new splash_Wrapping();
+    return new Roots_Wrapping();
   }
 }
-add_filter('template_include', array('splash_Wrapping', 'wrap'), 99);
+add_filter('template_include', array('roots_Wrapping', 'wrap'), 99);
